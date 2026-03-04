@@ -1,11 +1,3 @@
-/*
-  Comentários gerais sobre propriedades CSS usadas abaixo:
-  - margin: controla o espaçamento externo de um elemento (fora da borda)
-  - padding: controla o espaçamento interno de um elemento (dentro da borda)
-  - font-family: define a fonte do texto, com fallback em caso de indisponibilidade
-  Outras propriedades também aparecem no arquivo e são explicadas inline onde necessário.
-*/
-
 /*Geral*/
 *{
     margin: 0; /* remove espaçamento externo padrão de todos os elementos */
@@ -171,5 +163,6 @@ footer h2 {
         width: 100%; /* faz o botão de busca ocupar toda a largura disponível */
         margin-top: 0.5rem; /* espaço acima do botão de busca */
     }
+
 
 }
