@@ -1,0 +1,175 @@
+/*
+  Comentários gerais sobre propriedades CSS usadas abaixo:
+  - margin: controla o espaçamento externo de um elemento (fora da borda)
+  - padding: controla o espaçamento interno de um elemento (dentro da borda)
+  - font-family: define a fonte do texto, com fallback em caso de indisponibilidade
+  Outras propriedades também aparecem no arquivo e são explicadas inline onde necessário.
+*/
+
+/*Geral*/
+*{
+    margin: 0; /* remove espaçamento externo padrão de todos os elementos */
+    padding: 0; /* remove espaçamento interno padrão */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* define a família de fontes para o texto */
+}
+
+ul {
+    list-style: none; /* remove os marcadores padrão das listas */
+}
+
+a {
+    text-decoration: none; /* remove sublinhado padrão de links */
+    color: #444; /* define cor do texto do link */
+}
+
+a:hover {
+    color: #37a1f7; /* muda a cor do link quando o cursor está sobre ele */
+}
+
+/*navbar*/
+#navbar {
+    padding: 1.5rem 2.5rem; /* espaço interno vertical/horizontal na navbar */
+    border-bottom: 2px solid #ddd; /* borda inferior sólida para separar a navbar do conteúdo */
+}
+
+#navbar-inner {
+    display: flex; /* utiliza flexbox para alinhar itens horizontalmente */
+    justify-content: space-between; /* distribui espaço entre os itens ao máximo */
+    align-items: center; /* alinha verticalmente os itens no centro */
+    max-width: 1200px; /* largura máxima do container */
+    margin: 0 auto; /* centraliza horizontalmente com margens automáticas */
+}
+
+#nav-links {
+    display: flex; /* arranja links de navegação em linha */
+    gap: 1rem; /* espaço entre cada link */
+}
+
+/*container principal*/
+.container {
+    display: flex; /* define container principal como flex para layout de duas colunas */
+    padding: 2rem 2.5rem; /* espaçamento interno vertical e horizontal */
+    gap: 3rem; /* espaço entre as colunas de posts e sidebar */
+    max-width: 1200px; /* limita a largura total do container */
+    margin: 0 auto; /* centraliza o container horizontalmente */
+}
+
+#posts-container {
+    flex: 3 1 0; /* item flexível que ocupa 3 partes, pode crescer e não encolhe */
+}
+
+.post {
+    border-bottom: 2.5rem; /* define espaçamento inferior (poderia estar faltando unidade como px) */
+}
+
+.post img {
+    width: 100%; /* faz a imagem ocupar toda a largura do contêiner do post */
+    margin-bottom: 1rem; /* espaço abaixo da imagem */
+}
+
+.tittle,
+.description,
+.author {
+    margin-bottom: 1rem; /* margem inferior para separar título, descrição e autor */
+}
+
+.tittle {
+    font-size: 2rem; /* tamanho da fonte do título do post */
+}
+
+.author {
+    color: #333; /* cor do texto do autor */
+    font-weight: bold; /* deixa o nome do autor em negrito */
+}
+
+/*barra lateral*/
+#sidebar {
+    flex: 1 1 0; /* sidebar flexível que ocupa 1 parte do espaço */
+}
+
+#search-bar,
+#categories,
+#tags {
+    padding: 1.5rem; /* espaçamento interno de cada seção da sidebar */
+    border: 1px solid #ddd; /* borda cinza clara ao redor das seções */
+}
+
+#search-bar h4,
+#categories h4,
+#tags h4 {
+    margin-bottom: 1.5rem; /* espaço abaixo dos títulos das seções */
+    font-size: 1.6rem; /* tamanho da fonte dos cabeçalhos */
+}
+
+#search-bar form {
+    display: flex; /* exibe os campos de busca em linha (input + botão) */
+}
+
+#search-bar input[type="submit"] {
+    cursor: pointer;
+    padding: 0.5rem 1rem; /* espaço interno dentro do campo de texto */
+    border: 1px solid #ddd; /* borda cinza clara ao redor do campo */
+    background-color: #37a1f7; /* cor de fundo do campo de texto */
+    color: #fff; /* cor do texto dentro do campo de texto */
+}
+
+#categories li {
+    margin-bottom: 1rem; /* espaço entre os itens da lista de categorias */
+}
+
+#tags-container {
+    display: flex; /* exibe as tags em linha */
+    flex-wrap: wrap; /* permite que as tags quebrem para a próxima linha se necessário */
+    gap: 0.5rem; /* espaço entre as tags */
+}
+
+#tafs-container .a {
+    background-color: #ddd; /* cor de fundo das tags */
+    padding: 0.5rem 0.7rem; /* espaço interno das tags */
+    border-radius: 0.3rem; /* bordas arredondadas para as tags */
+}
+
+/*rodapé*/
+#footer {
+    border-top: 2px solid #ddd; /* borda superior para separar o rodapé do conteúdo */
+    padding: 3rem; /* espaçamento interno do rodapé */
+    text-align: center; /* centraliza o texto dentro do rodapé */
+}
+
+#footer p,
+footer h2 {
+    margin-bottom: 1rem; /* espaço abaixo do texto e do título do rodapé */
+}
+
+/*responsividade*/
+@media (max-width: 480px) {
+    /*navbar*/
+    #navbar-inner {
+        flex-direction: column; /* empilha os itens da navbar verticalmente */
+        gap: 1rem; /* espaço entre os itens empilhados */
+        text-align: center; /* centraliza o texto na navbar */
+    }
+
+    #nav-links {
+        flex-direction: column; /* empilha os links de navegação verticalmente */
+        gap: 0.5rem; /* espaço entre os links empilhados */
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .tittle {
+        font-size: 1.5rem; /* reduz o tamanho da fonte do título em telas menores */
+    }
+
+    #search-bar form {
+        flex-direction: column; /* empilha os campos de busca verticalmente */
+    }
+
+    .search-bar input[type="submit"] {
+        width: 100%; /* faz o botão de busca ocupar toda a largura disponível */
+        margin-top: 0.5rem; /* espaço acima do botão de busca */
+    }
+
+}
